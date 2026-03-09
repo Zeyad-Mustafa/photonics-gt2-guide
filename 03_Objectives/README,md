@@ -1,0 +1,81 @@
+# 📡 Section 03 — Objectives
+
+> **Learning Objective:** After reading this section, you will know exactly which objective to choose for your print job, how to install it safely, and why your choice affects everything from resolution to print speed.
+
+---
+
+## What Is an Objective (And Why Should I Care)?
+
+In the GT2, the **objective lens** is the heart of the entire printing process. It is a precision microscope lens that focuses the laser to a tiny point inside the photoresist. Everything about your print — resolution, speed, voxel size, compatible materials, and achievable structure size — is determined by which objective you choose.
+
+Think of it like choosing a brush for painting: a fine brush gives you detail but takes longer; a wide brush is fast but rough.
+
+---
+
+## The 4 Objectives Available
+
+The Photonic Professional GT2 comes with **4 interchangeable objectives**:
+
+| Objective | Magnification | Type | NA | Working Distance | Mode | Primary Use |
+|---|---|---|---|---|---|---|
+| **25× DiLL** | 25× | Immersion | 0.8 | 380 µm | DiLL | Mesoscale balanced printing |
+| **63× DiLL** | 63× | Oil Immersion | 1.4 | 360 µm | DiLL / Oil | Highest resolution nanostructures |
+| **10× DiLL** | 10× | Immersion | 0.3 | 700 µm | DiLL | Large mm-scale fast prints |
+| **20× Air** | 20× | Air | — | — | Air | 2D / pseudo-3D on spin-coated resists |
+
+> ⚠️ **Critical:** You must physically swap objectives when changing between modes. The wrong objective with the wrong resist can damage the lens or your sample.
+
+---
+
+## Section Files
+
+### [10x_objective/overview.md](10x_objective/overview.md)
+The "workhorse for big jobs." Low resolution but can print structures up to ~10 mm³.
+
+### [25x_objective/overview.md](25x_objective/overview.md)
+The sweet spot for most research. Balanced resolution (~1 µm features) and reasonable speed. Paired with IP-S resist.
+
+### [63x_objective/overview.md](63x_objective/overview.md)
+When you need the best. Sub-200 nm features. The lens physically dips into the liquid resist (DiLL mode) for refractive index matching.
+
+### [20x_objective/overview.md](20x_objective/overview.md)
+The only air objective. Used for 2D patterning on spin-coated i-line resists. Cannot do true 3D printing.
+
+### [objective_comparison_table.md](objective_comparison_table.md)
+Side-by-side comparison of all specs including voxel dimensions, print field, max structure volume, and resist compatibility.
+
+---
+
+## Quick Decision Guide
+
+```
+What size is your structure?
+
+  ├── < 100 µm (sub-micron features needed)
+  │     └──► Use 63× + IP-Dip2
+  │
+  ├── 100 µm – 1 mm (moderate detail)
+  │     └──► Use 25× + IP-S (or IP-Visio for bio)
+  │
+  ├── 1 mm – 10 mm+ (large, fast)
+  │     └──► Use 10× + IP-Q
+  │
+  └── 2D pattern on wafer only
+        └──► Use 20× + i-line resist (spin-coated)
+```
+
+---
+
+## Before You Install ANY Objective
+
+1. Make sure the **green "Process" light is OFF** before opening the top hatch
+2. Press **"Exchange Holder"** button in NanoWrite first — this moves the piezo to safe position
+3. Press **"Open"** — the button will flash; only then open the lid
+4. Handle objectives **by their body**, never by the front element
+5. Insert **only until rotation stops** — do NOT overtighten
+
+---
+
+## Next Steps
+
+After choosing your objective → go to **[04_Resists_and_Materials](../04_Resists_and_Materials/README.md)** to select the right photoresist for your objective and application.
