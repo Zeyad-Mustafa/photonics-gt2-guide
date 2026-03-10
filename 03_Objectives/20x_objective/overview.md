@@ -1,6 +1,6 @@
-# 🔬 25× Objective — Overview
+# 🔭 20× Objective — Overview
 
-> The 25× is the most commonly used objective in most research labs. It strikes the ideal balance between resolution (~400 nm lateral) and print speed — making it the first choice for the majority of GT2 projects.
+> The 20× is the odd one out in the GT2 lineup. It is an **air objective** — it does not dip into resin. It is used exclusively for **2D patterning** on spin-coated photoresists, not for true 3D printing.
 
 ---
 
@@ -8,68 +8,47 @@
 
 | Property | Value |
 |---|---|
-| Magnification | 25× |
-| Numerical Aperture (NA) | 0.8 |
-| Working Distance (WD) | 380 µm |
-| Immersion type | DiLL (resin acts as immersion medium) |
-| Resin stop type | Silicone ring |
-| Lateral voxel size | ~400 nm |
-| Axial voxel size | ~1.5 µm |
-| Max structure height | ~380 µm |
-| Max structure volume | ~1 mm³ |
-| Typical laser power | 20–50% |
+| Magnification | 20× |
+| Type | Air (non-immersion) |
+| Immersion medium | None (air gap) |
+| Resin stop type | None |
+| True 3D printing | ❌ No |
+| Primary use | 2D / pseudo-3D on spin-coated resists |
+| Compatible resists | Standard i-line photoresists |
 
 ---
 
-## What Makes the 25× the Most Versatile Objective
+## What the 20× Can and Cannot Do
 
-The 25× sits in the middle of the objective lineup — not the fastest, not the finest, but the most practical for a wide range of applications:
+### ✅ Can Do
+- **2D lithography** — writing flat patterns on spin-coated photoresist surfaces
+- **Pseudo-3D** — shallow grayscale structures (variable exposure depth in thin resist)
+- **Large area patterning** — 100×100 mm stage range with stitching
+- Works with standard semiconductor photoresists (i-line, 365 nm equivalent exposure)
 
-- **Resolution** good enough for most microfluidics, MEMS, and photonic devices
-- **Speed** fast enough for structures up to ~1 mm³ in reasonable time (hours, not days)
-- **Resist options** the widest selection: IP-S, IP-Visio, IP-PDMS, IP-Q, IPX-Clear
-- **Standard substrate** ITO-coated glass is widely available and easy to handle
-
-Most first-time GT2 users learn on the 25× before moving to the 63× or 10×.
-
----
-
-## The Adjustment Ring — Critical Step
-
-⚠️ The 25× objective has an **adjustment ring** on its body that MUST be set correctly before use.
-
-The ring compensates for refractive index differences in the immersion medium. For DiLL mode with IP-series resins:
-
-**Set the ring to "Glyc" (Glycerin position) — the 3 longest bars on the scale**
-
-If the ring is set incorrectly:
-- Focus quality degrades
-- Voxel size increases unexpectedly
-- Structures may appear blurry or incomplete
-- Interface detection may fail
-
-→ See [adjustment_ring_guide.md](adjustment_ring_guide.md) for full details with diagrams.
+### ❌ Cannot Do
+- True volumetric 3D printing (no DiLL mode)
+- Sub-micron resolution (no high-NA immersion)
+- Use with any IP-series resin (IP-Dip2, IP-S, IP-Q, etc.)
+- Tall structures (limited by resist thickness, typically < 50 µm)
 
 ---
 
-## Typical Applications
+## When to Use the 20×
 
-- Microfluidic chips and lab-on-chip devices (channel width > 2 µm)
-- Cell scaffolds for tissue engineering (IP-Visio)
-- Flexible microstructures (IP-PDMS)
-- Photonic waveguides and couplers
-- MEMS cantilevers and springs
-- Micro-optical elements (lenses > 50 µm diameter)
-- General research structures requiring µm-scale precision
+Use the 20× when you need to:
+- Pattern a flat layer on a silicon wafer using standard photolithography resist
+- Create 2D masks, gratings, or flat microstructures
+- Integrate GT2 patterning into a larger semiconductor fabrication flow
+- Use resists that require air-gap exposure (non-immersion resists)
 
 ---
 
-## What You Cannot Do With the 25×
+## When NOT to Use the 20×
 
-- ❌ Features smaller than ~1 µm reliably
-- ❌ Sub-wavelength photonic crystal devices (use 63×)
-- ❌ Structures taller than ~380 µm (use 10×)
-- ❌ Millimeter-scale volumes efficiently (use 10×)
+If your project involves any true 3D structure — even a simple pillar or channel — use the 25× or 63× in DiLL mode instead.
+
+The 20× is a specialty tool for a specific subset of workflows. Most GT2 users will rarely if ever need it.
 
 ---
 
