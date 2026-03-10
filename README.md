@@ -6,8 +6,6 @@
 
 ---
 
-<img src="gt2.jpg" />
-
 ## 📌 What Is This Project?
 
 The **Nanoscribe Photonic Professional GT2** is one of the world's most advanced 3D micro/nanoprinters. It uses a technology called **Two-Photon Polymerization (2PP)** to write 3D structures with feature sizes as small as **160 nanometers** — that's roughly 500 times thinner than a human hair.
