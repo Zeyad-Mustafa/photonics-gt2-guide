@@ -1,4 +1,5 @@
 # 🔬 Nanoscribe Photonic Professional GT2 — Complete Beginner's Guide
+![gt2](https://github.com/user-attachments/assets/75f09c94-a9b1-40b2-9c01-82a8d28a8948)
 
 > **A comprehensive, zero-to-expert resource for learning 3D nanofabrication with the Nanoscribe Photonic Professional GT2.**  
 > Built for students, researchers, and engineers who have never touched a two-photon polymerization system before.
