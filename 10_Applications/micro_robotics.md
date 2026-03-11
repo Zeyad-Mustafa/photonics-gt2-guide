@@ -1,2 +1,84 @@
-# Micro Robotics
+# Micro-Robotics
 
+## Why the GT2 Is Used for Micro-Robotics
+
+Micro-robotics — the design and fabrication of robots with body dimensions below 1 mm — is one of the most demanding fabrication challenges in engineering. These devices must have complex 3D geometry, moving parts, and functional surfaces, all at a scale where conventional machining is impossible and standard semiconductor fabrication produces only planar structures.
+
+The GT2 is currently the most capable single tool for fabricating 3D microrobot bodies. It can produce complex 3D shapes in a single print, with smooth surfaces suitable for locomotion in viscous fluids, and with the structural detail needed for functional appendages, flagella, and joints.
+
+---
+
+## What Can Be Fabricated
+
+Helical swimmers: corkscrew-shaped robots that propel themselves through viscous fluid by rotating around their long axis under magnetic actuation. The helix geometry is defined precisely in CAD and printed in a single step. Helix pitch, radius, and wire thickness are the primary design parameters.
+
+Bacterial-inspired swimmers: structures that mimic the flagella of motile bacteria — typically a helical tail attached to a head body. At low Reynolds number (the regime of microscale fluid dynamics), rotation of the helical tail produces thrust by non-reciprocal motion.
+
+Walking microrobots: structures with articulated legs designed to walk on surfaces under magnetic, acoustic, or optical actuation.
+
+Cargo-carrying vehicles: hollow or cup-shaped microrobots that can carry particles, cells, or drug payloads in their interior volume. The payload is loaded after printing and development.
+
+Magnetically actuated swimmers: any microrobot body that is subsequently coated with a magnetic material (nickel, iron, or magnetic nanoparticle composite) by PVD or co-printing. The magnetic coating allows external magnetic fields to exert torques and forces on the robot for wireless actuation.
+
+Shape-morphing structures: devices that change shape in response to stimuli (pH, temperature, light, swelling). Printed in IP-PDMS or in bilayer geometries where differential swelling produces bending.
+
+---
+
+## Recommended Objective and Resist
+
+Primary micro-robotics combination: 63x objective with IP-Dip2.
+
+The 63x is required because microrobot bodies at the 10 to 100 um scale have feature sizes (helix wire diameter, flagellum thickness, appendage width) that require sub-micron resolution for accurate geometry and smooth surfaces. Rough surfaces increase drag and reduce locomotion efficiency at the microscale.
+
+IP-Dip2 is preferred for most untethered microrobots because:
+- High stiffness after UV cure ensures the robot body maintains its geometry under fluid forces and during coating processes
+- Smooth surface finish reduces viscous drag
+- Compatible with subsequent metal coating by PVD for magnetic actuation
+
+For soft microrobots that must deform as part of their actuation mechanism: IP-PDMS with the 25x objective. The low Young's modulus (1 to 5 MPa) allows large elastic deformation under applied forces or swelling stimuli.
+
+---
+
+## Design Considerations
+
+Low Reynolds number physics: at the microscale, fluid dynamics is dominated by viscosity rather than inertia (Reynolds number much less than 1). Locomotion strategies that work for macroscale robots (paddling, undulating) do not produce net displacement at low Reynolds number due to the scallop theorem — the motion must be non-reciprocal to produce thrust. Helical rotation satisfies this requirement and is the standard actuation strategy for magnetic microswimmers.
+
+Helix design parameters:
+- Pitch: the axial distance per one full revolution of the helix. Determines thrust per rotation.
+- Helix radius: the radial distance from the helix axis to the wire centerline.
+- Wire diameter: must be above the minimum stable pillar diameter for the chosen objective.
+- Number of turns: determines total helix length and therefore device length.
+
+Optimal helix geometry for maximum swimming speed at a given magnetic torque is determined by resistive force theory — use the established analytical framework for helix optimization before printing.
+
+Magnetic coating: most microrobot propulsion relies on coating the printed polymer body with a magnetic material. Options:
+- Nickel: deposited by PVD (sputtering). Provides strong ferromagnetism. 100 to 200 nm thick nickel coating on an IP-Dip2 helix provides sufficient magnetic moment for actuation in fields of 1 to 10 mT.
+- Iron: higher saturation magnetization than nickel but more prone to oxidation.
+- Embedded magnetic particles: some researchers mix magnetic nanoparticles into the resin before printing. This eliminates the separate coating step but modifies the resin optical properties and must be validated for each particle loading.
+
+Actuation setup: microrobots are typically actuated by rotating external magnetic fields generated by Helmholtz coil pairs. The coil setup is not part of the GT2 system — the robot is printed with the GT2 and then actuated in a separate experimental setup.
+
+---
+
+## Representative Results
+
+Helical magnetic microswimmers with body length 30 um, helix radius 2 um, and wire diameter 800 nm, coated with 100 nm nickel, have demonstrated swimming speeds of 1 to 10 body lengths per second in water at rotation frequencies of 10 to 50 Hz.
+
+Microrobots carrying single cells in hollow cup structures, guided by magnetic fields through microfluidic channels, have been demonstrated for targeted cell delivery applications.
+
+Shape-morphing IP-PDMS structures that fold from a flat printed geometry into a 3D shape upon immersion in water (due to anisotropic swelling) have been used to fabricate self-folding microgrippers.
+
+Multi-material microrobots printed using sequential IP-Dip2 (rigid body) and IP-PDMS (elastic joints) in the same print session have demonstrated articulated locomotion combining rigid and soft segments.
+
+---
+
+## Limitations
+
+- Actuation range: magnetically actuated microrobots require an external field source. The field strength drops with distance, limiting the working range from the coil setup.
+- Speed: typical microswimmer speeds are 10 to 100 um per second — adequate for in vitro experiments but slow for many in vivo applications.
+- Biocompatibility for in vivo use: IP-series polymers have not been validated for in vivo implantation. Biocompatible coatings (parylene, SiO2) can be applied to the robot surface but add process steps.
+- Scale: the GT2 is well-suited for robots in the 10 to 500 um range. Below 10 um, structural complexity is limited by minimum feature sizes. Above 500 um, print time and working distance constraints favor other fabrication methods.
+
+---
+
+Proceed to: nanostructures.md
