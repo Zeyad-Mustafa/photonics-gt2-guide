@@ -15,7 +15,7 @@ This GitHub project is your **complete beginner's handbook**. Every folder below
 ---
 
 ## 🗺️ Project Map — Folder Structure
-
+ 
 ```
 photonics-gt2-guide/
 │
